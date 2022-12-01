@@ -22,6 +22,13 @@ export const theme = {
     MD: '18px',
     SM: '16px',
     XS: '14px',
+  },
+  lineHeight: {
+    XL: '190%',
+    LG: '170%',
+    MD: '150%',
+    SM: '130%',
+    XS: '110%',
   }
 }
 
