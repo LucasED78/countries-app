@@ -1,5 +1,5 @@
-export const fetchCountries = async () => {
-  const response = await fetch('https://restcountries.com/v3.1/all');
+export const fetchCountries = async (url: string) => {
+  const response = await fetch(url);
 
   const data = await response.json()
 
