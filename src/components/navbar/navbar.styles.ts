@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { EThemeMode } from "../../contexts/theme-context/typing";
+import { modeTransitionStyles } from "../../styles";
 
 export const Nav = styled.nav<{ mode: EThemeMode }>`
   display: flex;
@@ -12,6 +13,8 @@ export const Nav = styled.nav<{ mode: EThemeMode }>`
 
   box-shadow: ${({ theme, mode }) => theme.boxShadow[mode.toLowerCase()]};
   padding: 20px 60px;
+
+  ${modeTransitionStyles}
 `
 
 export const IconContainer = styled.div`
