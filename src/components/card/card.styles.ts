@@ -1,0 +1,49 @@
+import styled from "styled-components";
+import { EThemeMode } from "../../contexts/theme-context/typing";
+import { modeTransitionStyles } from "../../styles";
+import Typography from "../typography";
+
+export const CardContainer = styled.div<{ mode?: EThemeMode }>`
+  display: flex;
+  flex-direction: column;
+
+  box-shadow: ${({ theme, mode = EThemeMode.Light }) => theme.boxShadow[mode]};
+  border-radius: 6px;
+
+  ${modeTransitionStyles}
+`
+
+export const CardImage = styled.img`
+  width: 100%;
+
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+
+  height: 150px;
+`
+
+export const CardBody = styled.div<{ mode?: EThemeMode }>`
+  flex: 1 1 auto;
+  height: 100%;
+
+  padding: 16px 24px;
+  padding-bottom: 20px;
+
+  background-color: ${({ theme, mode = EThemeMode.Light }) => theme.colors[mode.toLowerCase()].element};
+  
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+
+  ${modeTransitionStyles}
+`
+
+export const CardGrid = styled.div`
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 40px;
+  row-gap: 40px;
+`
+export const CardTitle = styled.div`
+  padding: 10px 0;
+`
