@@ -3,6 +3,7 @@ export const theme = {
     dark: {
       background: '#202c37',
       element: '#2b3945',
+      input: '#ffffff',
       text: '#ffffff'
     },
     light: {

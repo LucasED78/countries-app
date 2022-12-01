@@ -33,7 +33,7 @@ const CountryCard: React.FC<CountryCardProps> = ({
         <Typography fontSize="XS" lineHeight="MD">
           Population: 
           {''} <Typography fontSize="XS" fontWeight="300" lineHeight="MD" as="span">
-            { population }
+            { Intl.NumberFormat('en-uk').format(population) }
           </Typography>
         </Typography>
         

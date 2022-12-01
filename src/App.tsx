@@ -4,6 +4,7 @@ import * as css from './styles'
 import { useThemeContext } from './contexts/theme-context'
 import Navbar from './components/navbar'
 import Home from './pages/Home'
+import { FiltersContextProvider } from './contexts/filters-context'
 
 const App = () => {
   const { themeMode } = useThemeContext()
@@ -13,7 +14,9 @@ const App = () => {
       <css.GlobalStyle mode={themeMode} />
       <Navbar />
       <css.Container>
-        <Home />
+        <FiltersContextProvider>
+          <Home />
+        </FiltersContextProvider>
       </css.Container>
     </ThemeProvider>
   )

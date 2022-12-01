@@ -1,16 +1,20 @@
-import useSWR from "swr"
+import { useDebounce } from 'use-debounce'
 import Card from "../components/card"
 import CountryCard from "../components/country-card"
-import { useThemeContext } from "../contexts/theme-context"
-import { fetchCountries } from "../services/country"
+import { useCountries } from "../hooks/use-countries"
+import FilterBar from "../components/filter-bar"
+import { useFiltersContext } from "../contexts/filters-context"
 
 const Home = () => {
-  const { data } = useSWR('/all', fetchCountries)
+  const { search } = useFiltersContext()
+  const [debouncedValue] = useDebounce(search, 800)
+  const { data = [], isLoading } = useCountries({ search: debouncedValue })  
   
-  if (!data) return <>loading...</>
+  if (isLoading) return <>loading...</>
 
   return (
     <>
+      <FilterBar />
       <Card.Grid>
         {
           data.map(country => (
