@@ -1,10 +1,9 @@
+import { Outlet } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
 import { theme } from './theme'
 import * as css from './styles'
 import { useThemeContext } from './contexts/theme-context'
 import Navbar from './components/navbar'
-import Home from './pages/Home'
-import { FiltersContextProvider } from './contexts/filters-context'
 
 const App = () => {
   const { themeMode } = useThemeContext()
@@ -14,9 +13,7 @@ const App = () => {
       <css.GlobalStyle mode={themeMode} />
       <Navbar />
       <css.Container>
-        <FiltersContextProvider>
-          <Home />
-        </FiltersContextProvider>
+        <Outlet />
       </css.Container>
     </ThemeProvider>
   )
