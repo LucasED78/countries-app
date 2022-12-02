@@ -1,5 +1,6 @@
 export type CountryCardDefault = {
   country: ICountry
+  onCountryClick: (country: ICountry) => void
 }
 
 export type CountryCardWithLoading = {

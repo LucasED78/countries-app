@@ -1,3 +1,4 @@
+import React from 'react'
 import Skeleton from "react-loading-skeleton";
 import { useThemeContext } from "../../contexts/theme-context";
 import Card from "../card";
@@ -8,7 +9,7 @@ import 'react-loading-skeleton/dist/skeleton.css'
 const CountryCard: React.FC<CountryCardProps> = (props) => {
   const hasLoading = (props: CountryCardProps): props is CountryCardWithLoading => 'loading' in props;
   if (hasLoading(props)) {
-    if (props.loading) return <Skeleton width="277px" height="293px" borderRadius="6px" />
+    if (props.loading) return <Skeleton width="100%" height="293px" borderRadius="6px" />
   }
   
   const { themeMode } = useThemeContext()
@@ -21,11 +22,12 @@ const CountryCard: React.FC<CountryCardProps> = (props) => {
       region,
       capital,
       cca2
-    }
+    },
+    onCountryClick
   } = props as CountryCardDefault
 
   return (
-    <Card.Container mode={themeMode}>
+    <Card.Container mode={themeMode} onClick={() => onCountryClick(props.country as ICountry)}>
       <div>
         <Card.Image src={`https://flagcdn.com/w640/${cca2.toLowerCase()}.png`} alt={`flag of ${common}`} />
       </div>

@@ -10,6 +10,8 @@ export const CardContainer = styled.div<{ mode?: EThemeMode }>`
   box-shadow: ${({ theme, mode = EThemeMode.Light }) => theme.boxShadow[mode]};
   border-radius: 6px;
 
+  cursor: pointer;
+
   ${modeTransitionStyles}
 `
 
@@ -20,6 +22,11 @@ export const CardImage = styled.img`
   border-top-right-radius: 6px;
 
   height: 150px;
+
+  @media screen and (max-width: 450px) {
+    height: 200px;
+    grid-template-columns: 1fr;
+  }
 `
 
 export const CardBody = styled.div<{ mode?: EThemeMode }>`
@@ -41,8 +48,8 @@ export const CardGrid = styled.div`
   display: grid;
 
   grid-template-columns: repeat(4, 1fr);
-  column-gap: 40px;
-  row-gap: 40px;
+  column-gap: 60px;
+  row-gap: 60px;
 
   @media screen and (max-width: 1000px) {
     grid-template-columns: repeat(3, 1fr);
