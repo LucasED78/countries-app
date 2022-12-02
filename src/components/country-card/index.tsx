@@ -1,22 +1,30 @@
+import Skeleton from "react-loading-skeleton";
 import { useThemeContext } from "../../contexts/theme-context";
 import Card from "../card";
 import Typography from "../typography";
-import { CountryCardProps } from "./country-card.types";
+import { CountryCardDefault, CountryCardProps, CountryCardWithLoading } from "./country-card.types";
+import 'react-loading-skeleton/dist/skeleton.css'
 
-const CountryCard: React.FC<CountryCardProps> = ({
-  country: {
-    name: {
-      common
-    },
-    population,
-    region,
-    capital,
-    flags: {
-      png
-    }
+const CountryCard: React.FC<CountryCardProps> = (props) => {
+  const hasLoading = (props: CountryCardProps): props is CountryCardWithLoading => 'loading' in props;
+  if (hasLoading(props)) {
+    if (props.loading) return <Skeleton width="277px" height="293px" borderRadius="6px" />
   }
-}) => {
+  
   const { themeMode } = useThemeContext()
+  const {
+    country: {
+      name: {
+        common
+      },
+      population,
+      region,
+      capital,
+      flags: {
+        png
+      }
+    }
+  } = props as CountryCardDefault
 
   return (
     <Card.Container mode={themeMode}>
