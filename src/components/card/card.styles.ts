@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { EThemeMode } from "../../contexts/theme-context/typing";
-import { modeTransitionStyles } from "../../styles";
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 
 export const CardContainer = styled.div<{ mode?: EThemeMode }>`
@@ -11,8 +10,6 @@ export const CardContainer = styled.div<{ mode?: EThemeMode }>`
   border-radius: 6px;
 
   cursor: pointer;
-
-  ${modeTransitionStyles}
 `
 
 export const CardImage = styled(LazyLoadImage)`
@@ -40,8 +37,6 @@ export const CardBody = styled.div<{ mode?: EThemeMode }>`
   
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
-
-  ${modeTransitionStyles}
 `
 
 export const CardGrid = styled.div`
