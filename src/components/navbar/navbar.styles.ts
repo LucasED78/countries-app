@@ -15,6 +15,10 @@ export const Nav = styled.nav<{ mode: EThemeMode }>`
   padding: 20px 60px;
 
   ${modeTransitionStyles}
+
+  @media screen and (max-width: 768px) {
+    padding 20px 16px;
+  }
 `
 
 export const IconContainer = styled.div`

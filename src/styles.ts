@@ -19,4 +19,8 @@ export const GlobalStyle = createGlobalStyle<{ mode: EThemeMode, theme: Theme }>
 export const Container = styled.main`
   padding: 40px 60px;
   min-height: 100vh;
+
+  @media screen and (max-width: 768px) {
+    padding 40px 16px;
+  }
 `

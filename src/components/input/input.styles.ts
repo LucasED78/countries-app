@@ -17,6 +17,10 @@ export const Input = styled.input<{ mode?: EThemeMode }>`
   color: ${({ theme, mode = EThemeMode.Light }) => theme.colors[mode.toLowerCase()].input};
 
   font-weight: 600;
+
+  @media screen and (max-width: 600px) {
+    width: 100%;
+  }
 `
 
 export const InputContainer = styled.div`
@@ -24,6 +28,10 @@ export const InputContainer = styled.div`
 
   display: flex;
   align-items: center;
+
+  @media screen and (max-width: 600px) {
+    width: 100%;
+  }
 `
 
 export const IconContainer = styled.div`

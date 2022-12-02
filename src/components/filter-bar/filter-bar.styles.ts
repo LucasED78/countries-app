@@ -6,4 +6,10 @@ export const Container = styled.div`
   justify-content: space-between;
 
   margin-bottom: 40px;
+
+  @media screen and (max-width: 600px) {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+  }
 `

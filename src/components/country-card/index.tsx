@@ -20,16 +20,14 @@ const CountryCard: React.FC<CountryCardProps> = (props) => {
       population,
       region,
       capital,
-      flags: {
-        png
-      }
+      cca2
     }
   } = props as CountryCardDefault
 
   return (
     <Card.Container mode={themeMode}>
       <div>
-        <Card.Image src={png} />
+        <Card.Image src={`https://flagcdn.com/w640/${cca2.toLowerCase()}.png`} alt={`flag of ${common}`} />
       </div>
       <Card.Body mode={themeMode}>
         <Card.Title>
