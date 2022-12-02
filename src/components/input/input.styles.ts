@@ -15,6 +15,9 @@ export const Input = styled.input<{ mode?: EThemeMode }>`
   
   background-color: ${({ theme, mode = EThemeMode.Light }) => theme.colors[mode.toLowerCase()].element};
   color: ${({ theme, mode = EThemeMode.Light }) => theme.colors[mode.toLowerCase()].input};
+  ::placeholder {
+    color: ${({ theme, mode = EThemeMode.Light }) => theme.colors[mode.toLowerCase()].input};
+  }
 
   font-weight: 600;
 

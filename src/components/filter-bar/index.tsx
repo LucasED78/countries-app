@@ -1,6 +1,5 @@
 import React from 'react'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Input from '../input'
 import { useThemeContext } from '../../contexts/theme-context'
 import { useFiltersContext } from '../../contexts/filters-context'
@@ -10,6 +9,7 @@ import Select from '../select'
 import * as css from './filter-bar.styles'
 import { ERegion } from '../../typing'
 import { SelectItem } from '../select/select.types'
+import Icon from '../Icon'
 
 const FilterBar = () => {
   const theme = useTheme() as Theme
@@ -26,7 +26,7 @@ const FilterBar = () => {
     <css.Container>
       <Input
         placeholder="Search for a country"
-        prefixIcon={<FontAwesomeIcon icon={faMagnifyingGlass} color={theme.colors[themeMode].input} />}
+        prefixIcon={<Icon icon={faMagnifyingGlass} color={theme.colors[themeMode].input} />}
         value={search}
         onChange={(event) => setSearch(event.currentTarget.value)}
       />

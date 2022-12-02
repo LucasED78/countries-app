@@ -1,7 +1,7 @@
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState } from 'react'
 import { useThemeContext } from '../../contexts/theme-context'
+import Icon from '../Icon'
 import Typography from '../typography'
 import * as css from './select.styles'
 import { SelectItem, SelectProps } from './select.types'
@@ -35,7 +35,7 @@ const Select: React.FC<SelectProps> = ({
           { getPlaceholderValue() }
         </Typography>
 
-        <FontAwesomeIcon icon={isOpen ? faChevronDown : faChevronUp} size="2xs" />
+        <Icon icon={isOpen ? faChevronDown : faChevronUp} size="2xs" />
       </css.SelectedItem>
 
       <css.SelectList isOpen={isOpen} mode={themeMode}>

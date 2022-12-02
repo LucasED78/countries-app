@@ -7,8 +7,11 @@ const Icon = (props: FontAwesomeIconProps) => {
   const theme = useTheme() as Theme
   const { themeMode } = useThemeContext()
 
+  console.log(props.color);
+  
+
   return (
-    <FontAwesomeIcon {...props} color={theme.colors[themeMode].text} />
+    <FontAwesomeIcon {...props} color={props.color ?? theme.colors[themeMode].text} />
   )
 }
 
