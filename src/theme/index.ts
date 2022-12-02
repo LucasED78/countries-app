@@ -23,6 +23,7 @@ export const theme = {
     MD: '18px',
     SM: '16px',
     XS: '14px',
+    XXS: '12px',
   },
   lineHeight: {
     XL: '190%',
@@ -30,6 +31,12 @@ export const theme = {
     MD: '150%',
     SM: '130%',
     XS: '110%',
+  },
+  button: {
+    padding: {
+      MD: '12px 30px',
+      SM: '2px 30px'
+    }
   }
 }
 

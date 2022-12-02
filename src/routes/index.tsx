@@ -1,7 +1,8 @@
 import { createBrowserRouter } from 'react-router-dom'
 import App from '../App'
 import { FiltersContextProvider } from '../contexts/filters-context'
-import Home from '../pages/Home'
+import CountryDetail from '../pages/country-detail'
+import Home from '../pages/home'
 
 const routes = createBrowserRouter([
   {
@@ -15,6 +16,10 @@ const routes = createBrowserRouter([
             <Home />
           </FiltersContextProvider>
         )
+      },
+      {
+        path: '/:country',
+        element: <CountryDetail />
       }
     ]
   }

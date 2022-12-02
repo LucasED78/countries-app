@@ -18,6 +18,7 @@ declare interface ICountry {
   }
   tld: string
   cca2: string
+  cca3: string
   borders: string[]
   flags: {
     png: string
