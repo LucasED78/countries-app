@@ -6,21 +6,25 @@ import FilterBar from "../components/filter-bar"
 import { useFiltersContext } from "../contexts/filters-context"
 
 const Home = () => {
-  const { search } = useFiltersContext()
+  const { search, region } = useFiltersContext()
   const [debouncedValue] = useDebounce(search, 800)
-  const { data = [], isLoading } = useCountries({ search: debouncedValue })  
-  
-  if (isLoading) return <>loading...</>
+  const { data = [], isLoading } = useCountries({ search: debouncedValue, region })  
 
   return (
     <>
       <FilterBar />
       <Card.Grid>
         {
-          data.map(country => (
-            <CountryCard key={country.name.common} country={country} />
-          ))
+          !isLoading && (
+            data.map(country => (
+              <CountryCard key={country.name.common} country={country} />
+            ))
+          )
         }
+
+        {isLoading && Array(8).fill('').map((_, index) => (
+          <CountryCard key={index} loading />
+        ))}
       </Card.Grid>
     </>
   )
