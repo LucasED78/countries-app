@@ -33,7 +33,7 @@ const CountryCard: React.FC<CountryCardProps> = (props) => {
       </div>
       <Card.Body mode={themeMode}>
         <Card.Title>
-          <Typography fontSize="MD" fontWeight="800">
+          <Typography fontSize="MD" fontWeight="800" lineHeight="MD">
             { common }
           </Typography>
         </Card.Title>
