@@ -4,6 +4,7 @@ import { theme } from './theme'
 import * as css from './styles'
 import { useThemeContext } from './contexts/theme-context'
 import Navbar from './components/navbar'
+import { CountryMetadataContextProvider } from './contexts/country-metadata-context'
 
 const App = () => {
   const { themeMode } = useThemeContext()
@@ -13,7 +14,9 @@ const App = () => {
       <css.GlobalStyle mode={themeMode} />
       <Navbar />
       <css.Container>
-        <Outlet />
+        <CountryMetadataContextProvider>
+          <Outlet />
+        </CountryMetadataContextProvider>
       </css.Container>
     </ThemeProvider>
   )
