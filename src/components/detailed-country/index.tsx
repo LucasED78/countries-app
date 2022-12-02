@@ -19,17 +19,21 @@ const DetailedCountry: React.FC<DetailedCountryProps> = (props) => {
   } = country
   const { namesWithCCA } = useCountryMetadataContext()  
   const navigate = useNavigate()
+  const ImageSkeleton = () => <Skeleton width="100%" height="375px" />
   
   return (
     <css.Container>
       <css.ContentContainer>
         {
           loading
-            ? <Skeleton width="100%" height="375px" />
-            : <css.Image
-                src={`https://flagcdn.com/w1280/${cca2.toLowerCase()}.png`}
-                alt={`flag of ${name?.common}`}
-              />
+            ? <ImageSkeleton />
+            : (
+                <css.Image
+                  placeholder={<ImageSkeleton />}
+                  src={`https://flagcdn.com/w1280/${cca2.toLowerCase()}.png`}
+                  alt={`flag of ${name?.common}`}
+                />
+              )
         }
       </css.ContentContainer>
 

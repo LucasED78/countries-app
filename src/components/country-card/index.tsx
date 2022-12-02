@@ -28,9 +28,14 @@ const CountryCard: React.FC<CountryCardProps> = (props) => {
 
   return (
     <Card.Container mode={themeMode} onClick={() => onCountryClick(props.country as ICountry)}>
-      <div>
-        <Card.Image src={`https://flagcdn.com/w640/${cca2.toLowerCase()}.png`} alt={`flag of ${common}`} />
-      </div>
+      <Card.Image 
+        placeholder={<Skeleton height="150px" width="100%" />}
+        src={`https://flagcdn.com/w640/${cca2.toLowerCase()}.png`}
+        alt={`flag of ${common}`}
+        delayMethod="debounce"
+        delayTime={1000}
+        useIntersectionObserver
+      />
       <Card.Body mode={themeMode}>
         <Card.Title>
           <Typography fontSize="MD" fontWeight="800" lineHeight="MD">

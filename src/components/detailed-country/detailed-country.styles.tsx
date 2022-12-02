@@ -1,3 +1,4 @@
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -24,7 +25,7 @@ export const ContentContainer = styled.div`
   }
 `
 
-export const Image = styled.img`
+export const Image = styled(LazyLoadImage)`
   width: 100%;
   height: 100%:
 `

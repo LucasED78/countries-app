@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { EThemeMode } from "../../contexts/theme-context/typing";
 import { modeTransitionStyles } from "../../styles";
-import Typography from "../typography";
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 
 export const CardContainer = styled.div<{ mode?: EThemeMode }>`
   display: flex;
@@ -15,7 +15,7 @@ export const CardContainer = styled.div<{ mode?: EThemeMode }>`
   ${modeTransitionStyles}
 `
 
-export const CardImage = styled.img`
+export const CardImage = styled(LazyLoadImage)`
   width: 100%;
 
   border-top-left-radius: 6px;
